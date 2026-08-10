@@ -262,6 +262,41 @@ HERO TYPOGRAPHY
     text-wrap: balance;
 }
 
+/*========================================
+Slideshow
+========================================*/
+.slideshow-container {
+    /* max-width: 1000px; */
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.highlight-section{
+    background-color: whitesmoke !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #2f4636;
+}
+
+.carousel-item .row {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carousel-item .row:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
 /* ========================================
 FOOTER
 ======================================== */
