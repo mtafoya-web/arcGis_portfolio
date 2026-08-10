@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        Samantha Galaviz Portfolio
+        {% endblock %}
+    </title>
+
+        <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="{{ url_for('static', path='images/otter_sprite.png') }}"
+    >
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+
+    {% block head %}
+    {% endblock %}
+</head>
+
+
+<body>
+
+    <!-- =====================================
+         NAVBAR
+    ====================================== -->
+
+    <nav class="navbar navbar-expand-lg portfolio-navbar">
+        <div class="container">
+
+            <!-- Brand -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+                <img class="navbar-logo" src="{{ url_for('static', path='images/otter_sprite.png') }}"
+                    alt="Samantha Portfolio Logo">
+
+                <span class="word-main">
+                    Samantha's
+                    <span class="word-accent">
+                        Portfolio
+                    </span>
+                </span>
+            </a>
+
+
+            <!-- Mobile Navigation Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-2 text-center">
+
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class="fa-solid fa-house me-1"></i>
+                            Home
+                        </a>
+                    </li>
+
+
+                    <!-- About -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">
+                            <i class="fa-solid fa-user me-1"></i>
+                            About Me
+                        </a>
+                    </li>
+
+                    <!-- Portfolio -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/portfolio">
+                            <i class="fa-solid fa-briefcase me-1"></i>
+                            Portfolio
+                        </a>
+                    </li>
+
+                    <!-- Resume -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/resume">
+                            <i class="fa-solid fa-file-lines me-1"></i>
+                            Resume
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =====================================
+         MAIN PAGE CONTENT
+    ====================================== -->
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+
+    <!-- =====================================
+         CONTACT SECTION
+    ====================================== -->
+
+    <section class="contact-bar">
+        <div class="container">
+
+            <div class="contact-bar-inner row align-items-center g-4">
+                <!-- Contact Text -->
+                <div class="col-12 col-lg">
+                    <div class="contact-bar-text">
+                        <p class="contact-eyebrow text-uppercase fw-semibold mb-2">
+                            Get in touch
+                        </p>
+                        <h2 class="mb-2">
+                            Let's Connect
+                        </h2>
+                        <p class="mb-0">
+                            Have a question, opportunity, or project in mind?
+                            I'd love to hear from you.
+                        </p>
+                    </div>
+                </div>
+                <!-- Contact Buttons -->
+                <div class="col-12 col-lg-auto">
+                    <div
+                        class="contact-bar-links d-flex flex-column flex-sm-row flex-wrap gap-2 justify-content-center justify-content-lg-end">
+                        <!-- Email -->
+                        <a href="mailto:sgalaviz0819@gmail.com" class="btn contact-btn" aria-label="Email Samantha">
+                            <i class="fa-solid fa-envelope me-1"></i>
+                            Email Me
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/samantha-galaviz-archila-b690601a4" class="btn contact-btn"
+                            target="_blank" rel="noopener noreferrer" aria-label="Samantha Galaviz LinkedIn">
+                            <i class="fa-brands fa-linkedin me-1"></i>
+                            LinkedIn
+                        </a>
+
+
+                        <!-- Phone -->
+                        <a href="tel:+13238057622" class="btn contact-btn" aria-label="Call Samantha">
+                            <i class="fa-solid fa-phone me-1"></i>
+                            Call Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="text-center">
+
+                <p class="footer-copyright mb-0">
+                    &copy; 2026 Samantha Galaviz.
+                    All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+</html>
