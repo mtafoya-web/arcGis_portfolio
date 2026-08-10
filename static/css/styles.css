@@ -297,6 +297,72 @@ Slideshow
     transform: translateY(-8px);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
 }
+
+/* ========================================
+Grid
+======================================== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-grid-item {
+    position: relative;
+    overflow: hidden;
+
+    height: 220px;
+}
+
+.project-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+.project-grid-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+/* Overlay */
+.project-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+    text-align: center;
+
+    background: rgba(40, 65, 47, 0.88);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show overlay when hovering */
+.project-grid-item:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Zoom image slightly */
+.project-grid-item:hover img {
+    transform: scale(1.05);
+}
 /* ========================================
 FOOTER
 ======================================== */
