@@ -83,6 +83,7 @@ The application keeps portfolio data in Pydantic models:
 - `Component`: reusable project/component item with a name, URL, and description.
 
 Initial content is loaded in `app/routes/Init.py`.
+![Website models and relationships](static/images/models.png)
 
 ## Development Notes
 
