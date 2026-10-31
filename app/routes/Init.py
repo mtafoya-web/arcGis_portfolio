@@ -1,11 +1,9 @@
 from app.models.user import User
-from app.models.projects import Project
-from app.models.component import Component
+from app.project_data import load_projects
 
 user = User(
     name="Samantha Galaviz Archila",
     email="sgalaviz0819@gmail.com",
-    phone="323-805-7622",
     bio=(
         "Hello! Welcome to my portfolio. I love all things related to ArcGIS, "
         "animal habitats, and protecting the planet's ecosystems. This portfolio "
@@ -34,15 +32,5 @@ user = User(
             "both people and animals."
         ),
     ],
+    projects=load_projects(),
 )
-
-images = []
-
-for i in range(10):
-    images.append(
-        Component(
-            name=f"Project {i + 1}",
-            url="/static/images/otter_sprite.png",
-            desc=f"Project {i + 1}",
-        )
-    )

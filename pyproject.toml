@@ -1,0 +1,5 @@
+[tool.mypy]
+python_version = "3.11"
+files = ["main.py", "app", "tests"]
+strict = true
+explicit_package_bases = true

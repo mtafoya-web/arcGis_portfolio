@@ -1,0 +1,16 @@
+<article class="portfolio-card">
+    <a href="{{ url_for('project_detail', slug=project.slug) }}" class="portfolio-card-link">
+        <div class="portfolio-card-media">
+            <img src="{{ project.thumbnail.url }}" alt="{{ project.thumbnail.name }}" loading="lazy"
+                class="portfolio-card-image">
+            <span class="project-kind portfolio-card-badge{% if project.interactive_map_url %} project-kind-interactive{% endif %}">
+                {{ 'Interactive map' if project.interactive_map_url else 'Cartography' }}
+            </span>
+        </div>
+        <div class="portfolio-card-body">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.summary }}</p>
+            <span class="project-cta">{{ 'Explore interactive map' if project.interactive_map_url else 'View project' }} <span aria-hidden="true">&rarr;</span></span>
+        </div>
+    </a>
+</article>

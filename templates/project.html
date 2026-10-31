@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}{{ project.title }} | {{ user.name }}{% endblock %}
+{% block head %}
+{% if project.arcgis_map %}
+<script type="module" src="https://js.arcgis.com/5.1/embeddable-components/"></script>
+{% endif %}
+{% endblock %}
+{% block content %}
+<article class="portfolio-page">
+    <div class="container">
+        <a class="project-back" href="{{ url_for('portfolio') }}">&larr; All projects</a>
+        <header class="portfolio-heading">
+            {% if project.interactive_map_url %}<p class="project-kind project-kind-interactive">Interactive map</p>{% endif %}
+            <h1>{{ project.title }}</h1>
+            <p>{{ project.summary }}</p>
+            <nav class="project-jump-links" aria-label="Project sections">
+                {% if project.interactive_map_url %}<a class="btn btn-success" href="#interactive-map">Explore the map &darr;</a>{% endif %}
+                <a class="project-cta" href="#project-overview">About this project</a>
+                <a class="project-cta" href="#project-images">Map gallery</a>
+            </nav>
+        </header>
+
+        {% if project.interactive_map_url %}
+        <section class="project-map" aria-labelledby="interactive-map">
+            <div class="project-map-heading">
+                <h2 id="interactive-map">Explore the map</h2>
+                <a href="{{ project.interactive_map_url }}" target="_blank" rel="noopener noreferrer"
+                    class="project-cta">Open interactive map <span class="visually-hidden">in a new tab</span> &nearr;</a>
+            </div>
+            {% if project.arcgis_map %}
+            {% set map = project.arcgis_map %}
+            <arcgis-embedded-map class="project-embed project-arcgis-map"
+                aria-label="Interactive map: {{ project.title }}"
+                item-id="{{ map.item_id }}" portal-url="{{ map.portal_url }}" theme="{{ map.theme }}"
+                center="{{ map.center[0] }},{{ map.center[1] }}" scale="{{ map.scale }}"
+                {% if map.bookmarks_enabled %}bookmarks-enabled{% endif %}
+                {% if map.heading_enabled %}heading-enabled{% endif %}
+                {% if map.legend_enabled %}legend-enabled{% endif %}
+                {% if map.information_enabled %}information-enabled{% endif %}
+                {% if map.scroll_enabled %}scroll-enabled{% endif %}
+                {% if map.time_zone_label_enabled %}time-zone-label-enabled{% endif %}
+            ></arcgis-embedded-map>
+            {% else %}
+            <iframe src="{{ project.embed_url }}" title="Interactive map: {{ project.title }}"
+                class="project-embed" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            {% endif %}
+            <p class="mt-2">{% if project.arcgis_map %}Zoom in to explore the mapped features. {% if project.arcgis_map.bookmarks_enabled %}Use bookmarks to jump to saved locations. {% endif %}{% if project.arcgis_map.legend_enabled %}Open the legend to read the symbols. {% endif %}{% endif %}If the map does not load, open it in a new tab using the link above.</p>
+        </section>
+        {% endif %}
+
+        <section class="project-narrative" aria-labelledby="project-overview">
+            <h2 id="project-overview">About this project</h2>
+            {% for paragraph in project.paragraphs %}
+                <p>{{ paragraph }}</p>
+            {% endfor %}
+        </section>
+
+        <section class="project-gallery" aria-labelledby="project-images">
+            <h2 id="project-images">Map gallery</h2>
+            <p>Select an image to view the full layout.</p>
+            {% for component in project.components %}
+            <figure>
+                <a href="{{ component.url }}" target="_blank" rel="noopener noreferrer"
+                    aria-label="Open full image: {{ component.name }} (new tab)">
+                    <img src="{{ component.url }}" alt="{{ component.name }}" loading="lazy">
+                </a>
+                {% if component.desc %}<figcaption>{{ component.desc }}</figcaption>{% endif %}
+            </figure>
+            {% endfor %}
+        </section>
+    </div>
+</article>
+{% endblock %}

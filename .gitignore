@@ -1,0 +1,25 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+
+# Test and coverage output
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local content-review artifacts
+.content-review/
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Vercel local project metadata
+.vercel/

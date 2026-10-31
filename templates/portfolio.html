@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Portfolio | {{ user.name }}{% endblock %}
+{% block content %}
+<section class="portfolio-page">
+    <div class="container">
+        <header class="portfolio-heading">
+            <p class="text-uppercase fw-semibold">GIS &amp; cartography</p>
+            <h1>Maps with a purpose.</h1>
+            <p>Explore interactive mapping, environmental studies, and cartographic design. Open a project to try its interactive map or view the full map layouts.</p>
+        </header>
+        <div class="portfolio-grid">
+            {% for project in user.projects %}
+                {% include "partials/project_card.html" %}
+            {% else %}
+                <p>Projects will be added soon.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

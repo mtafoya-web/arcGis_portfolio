@@ -272,8 +272,8 @@ Slideshow
     width: 100%;
 }
 
-.highlight-section{
-    background-color: whitesmoke !important;
+.highlight-section {
+    background: linear-gradient(135deg, var(--primary-soft), var(--bg) 70%);
 }
 
 .carousel-control-prev,
@@ -287,15 +287,6 @@ Slideshow
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
     background-color: #2f4636;
-}
-
-.carousel-item .row {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.carousel-item .row:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* ========================================
@@ -639,5 +630,458 @@ ACCESSIBILITY
     .navbar-logo,
     .nav-link {
         transition: none;
+    }
+}
+
+/* Project listing and shared detail page */
+.portfolio-page {
+    padding: 9rem 0 4rem;
+}
+
+.portfolio-heading {
+    max-width: 850px;
+    margin-bottom: 3rem;
+}
+
+.portfolio-heading h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2rem, 4vw, 3.75rem);
+    color: var(--primary-dark);
+    overflow-wrap: anywhere;
+}
+
+.portfolio-heading p {
+    max-width: 65ch;
+    line-height: 1.8;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+}
+
+.portfolio-card {
+    min-width: 0;
+    background: var(--surface);
+    border: 1px solid var(--primary-soft);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(63, 95, 69, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.portfolio-card:is(:hover, :focus-within) {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: 0 16px 32px rgba(63, 95, 69, 0.15);
+}
+
+.portfolio-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.portfolio-card-link:is(:hover, :focus-visible) h3 {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.portfolio-card-link:focus-visible {
+    outline: 3px solid var(--primary-dark);
+    outline-offset: -4px;
+}
+
+.portfolio-card-media {
+    position: relative;
+    flex: none;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--primary-soft);
+}
+
+.portfolio-card-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: var(--primary-soft);
+    transition: transform 0.35s ease;
+}
+
+.portfolio-card:is(:hover, :focus-within) .portfolio-card-image {
+    transform: scale(1.035);
+}
+
+.portfolio-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+    border-top: 3px solid var(--primary-soft);
+}
+
+.portfolio-card-body h3 {
+    margin: 0 0 0.85rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2vw, 1.65rem);
+    line-height: 1.3;
+    color: var(--primary-dark);
+    overflow-wrap: anywhere;
+}
+
+.project-kind {
+    align-self: flex-start;
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.35rem 0.75rem;
+    margin: 0 0 1rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--primary-dark);
+}
+
+.project-kind-interactive {
+    color: var(--surface) !important;
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.portfolio-card-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    max-width: calc(100% - 2rem);
+    margin: 0;
+    border-color: var(--surface);
+    background: var(--surface);
+    box-shadow: 0 3px 12px rgba(38, 49, 40, 0.14);
+}
+
+.portfolio-card-badge::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    flex: none;
+    align-self: center;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.portfolio-card-badge.project-kind-interactive::before {
+    background: var(--primary-soft);
+}
+
+.portfolio-card-badge.project-kind-interactive {
+    border-color: var(--primary-dark);
+    background: var(--primary-dark);
+}
+
+.project-jump-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+}
+
+.project-jump-links .btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+#interactive-map,
+#project-overview,
+#project-images {
+    scroll-margin-top: 1.5rem;
+}
+
+.portfolio-card-body p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.project-cta,
+.project-back {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    gap: 0.5rem;
+}
+
+.portfolio-card-body .project-cta {
+    margin-top: auto;
+}
+
+.portfolio-card-body .project-cta,
+.featured-project-cta {
+    align-self: flex-start;
+    justify-content: center;
+    gap: 0.65rem;
+    max-width: 100%;
+    padding: 0.7rem 1.1rem;
+    border: 1px solid var(--primary-dark);
+    border-radius: 999px;
+    background: var(--primary-dark);
+    color: var(--surface);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.portfolio-card-link:is(:hover, :focus-visible) .project-cta,
+.featured-project-cta:is(:hover, :focus-visible) {
+    border-color: var(--footer-bg);
+    background: var(--footer-bg);
+    color: var(--surface);
+}
+
+.featured-project-cta:focus-visible {
+    outline: 3px solid var(--primary-dark);
+    outline-offset: 4px;
+}
+
+.project-back {
+    margin-bottom: 1.5rem;
+}
+
+.project-narrative {
+    max-width: 72ch;
+    line-height: 1.8;
+    margin: 3rem 0;
+}
+
+.project-map,
+.project-gallery {
+    margin-top: 3rem;
+}
+
+.project-map-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-embed {
+    display: block;
+    width: 100%;
+    height: clamp(32rem, 75vh, 56rem);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.project-arcgis-map {
+    height: 600px;
+}
+
+.project-gallery figure {
+    max-width: 800px;
+    margin: 1.5rem 0;
+}
+
+.project-gallery figure a {
+    display: block;
+    background: var(--primary-soft);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.project-gallery img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.project-gallery figcaption {
+    margin-top: 0.75rem;
+}
+
+.featured-project {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    background: var(--surface);
+}
+
+.featured-project > div {
+    width: 100%;
+    min-width: 0;
+}
+
+#projectHighlights .carousel-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+#projectHighlights .carousel-inner::after {
+    display: none;
+}
+
+#projectHighlights .carousel-item {
+    display: block;
+    grid-area: 1 / 1;
+    min-width: 0;
+    float: none;
+    margin-right: 0;
+    visibility: hidden;
+}
+
+#projectHighlights .carousel-item:is(.active, .carousel-item-next, .carousel-item-prev) {
+    visibility: visible;
+}
+
+#projectHighlights .project-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+#projectHighlights .featured-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--primary-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+#projectHighlights .featured-eyebrow::before {
+    content: "";
+    width: 1.25rem;
+    height: 2px;
+    background: var(--accent);
+}
+
+#projectHighlights h3 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    color: var(--primary-dark);
+}
+
+#projectHighlights .project-description > p:not(.project-kind):not(.featured-eyebrow) {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.featured-project-media {
+    position: relative;
+    height: 100%;
+    min-height: 260px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--primary-soft);
+}
+
+.featured-project-media .highlight-image {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#projectHighlights .carousel-control-prev,
+#projectHighlights .carousel-control-next {
+    border: 1px solid var(--primary-dark);
+    background: var(--primary-dark);
+}
+
+#projectHighlights .carousel-control-prev-icon,
+#projectHighlights .carousel-control-next-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    filter: none;
+}
+
+#projectHighlights .carousel-control-prev:is(:hover, :focus-visible),
+#projectHighlights .carousel-control-next:is(:hover, :focus-visible) {
+    background: var(--footer-bg);
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.project-description .btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+#about {
+    scroll-margin-top: 2rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 44px !important;
+    height: 44px !important;
+}
+
+@media (min-width: 640px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1100px) {
+    .portfolio-grid:not(.portfolio-grid-home) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 992px) {
+    .featured-project {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 1fr;
+    }
+
+    .featured-project-media {
+        aspect-ratio: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-item,
+    .carousel-item .row,
+    .project-card,
+    .project-grid-item img,
+    .project-overlay,
+    .contact-bar-links a,
+    .portfolio-card,
+    .portfolio-card:is(:hover, :focus-within),
+    .portfolio-card-image,
+    .portfolio-card:is(:hover, :focus-within) .portfolio-card-image,
+    .portfolio-card-body .project-cta,
+    .featured-project-cta {
+        transition: none;
+        transform: none;
     }
 }

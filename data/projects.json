@@ -1,0 +1,193 @@
+[
+  {
+    "slug": "disneyland-energy-conservation",
+    "title": "Energy Conservation at Disneyland Resort",
+    "summary": "Explore an interactive map of energy and transportation features at Disneyland Resort.",
+    "desc": "This project maps energy conservation and transportation features at Disneyland Resort in Anaheim, California. The interactive map opens over the resort so visitors can explore individual locations, view the legend, and navigate with bookmarks.\n\nI used point and line features to distinguish energy-related locations from transportation routes, including the Disneyland Monorail. Labels and symbols make the features easier to identify within the surrounding streets, attractions, and parking areas.\n\nThe accompanying ArcGIS Pro layout brings the project into a static map, with a title, legend, north arrow, scale bar, and source information. Together, the interactive view and map layout demonstrate two ways to present the same mapping project.",
+    "featured": true,
+    "embed_url": null,
+    "arcgis_map": {
+      "item_id": "7997e897da4d472290638160c061c6b4",
+      "portal_url": "https://pcc-gis.maps.arcgis.com",
+      "center": [
+        -117.92005139702917,
+        33.81127780256998
+      ],
+      "scale": 18055.954822,
+      "theme": "light",
+      "bookmarks_enabled": true,
+      "heading_enabled": true,
+      "legend_enabled": true,
+      "information_enabled": true,
+      "scroll_enabled": false,
+      "time_zone_label_enabled": true
+    },
+    "components": [
+      {
+        "name": "Map of energy conservation and transportation features at Disneyland Resort.",
+        "url": "/static/images/projects/disneyland-energy-conservation/energy-conservation-map.png",
+        "desc": "ArcGIS Pro layout of Disneyland Resort, showing energy-related locations and transportation features."
+      }
+    ]
+  },
+  {
+    "slug": "orange-county-water-quality",
+    "title": "Orange County Water Quality",
+    "summary": "Mapping assessed water bodies and their impairment status using 2024 water-quality data.",
+    "desc": "This map shows assessed water bodies in Orange County, California, using 2024 water-quality assessment data. Line features represent rivers and streams, while polygons represent larger water bodies.\n\nUnique-value symbols distinguish water bodies listed as impaired under Section 303(d) of the Clean Water Act from those not listed in the assessment. Darker blue marks listed features, and lighter blue marks features that are not listed. Partially transparent polygons preserve the geographic context beneath them.\n\nA topographic basemap, city labels, county boundary, legend, north arrow, and scale bar provide context. The layout demonstrates how categorical symbology can make environmental assessment data easier to interpret.",
+    "featured": true,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Map of assessed water bodies and impairment listings in Orange County, California.",
+        "url": "/static/images/projects/orange-county-water-quality/water-quality-map.png",
+        "desc": "Orange County water-quality assessment, 2024. Blue line and polygon symbols distinguish listed and unlisted water bodies."
+      }
+    ]
+  },
+  {
+    "slug": "lower-48-population",
+    "title": "Population Mapping of the Lower 48 States",
+    "summary": "Comparing population patterns with graduated symbols, dot density, and state-level choropleth maps.",
+    "desc": "This project explores population patterns across the contiguous United States using data available through ArcGIS Online. Three layouts compare graduated symbols for city populations, dot density, and graduated colors for state populations.\n\nThe maps demonstrate how symbol size, dot patterns, and color classes change the way viewers interpret geographic data. Each layout includes a legend and geographic context; the data years are identified within the individual maps.\n\nCompleted for Professor Jeremy Huey at Pasadena City College.",
+    "featured": true,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Graduated-symbol map of city populations across the contiguous United States.",
+        "url": "/static/images/projects/lower-48-population/city-population-symbols.png",
+        "desc": "City populations represented with graduated symbols. Data year shown in the source layout: 2007."
+      },
+      {
+        "name": "Dot-density map of population across the contiguous United States.",
+        "url": "/static/images/projects/lower-48-population/population-dot-density.png",
+        "desc": "Population represented with a dot-density map; each dot represents 7,000 people. Data year: 2010."
+      },
+      {
+        "name": "Choropleth map of state populations across the contiguous United States.",
+        "url": "/static/images/projects/lower-48-population/state-population-choropleth.png",
+        "desc": "State populations represented with graduated colors. Data year shown in the source layout: 2010."
+      }
+    ]
+  },
+  {
+    "slug": "los-angeles-county-crisis-zones",
+    "title": "Crisis Zones in Los Angeles County",
+    "summary": "Mapping where urban development and roads intersect wildlife habitat.",
+    "desc": "This map highlights crisis zones in and around Los Angeles County where urban development and roads intersect wildlife habitat. As the map annotation explains, these boundaries can place pressure on nearby park lands.\n\nOrange-red highlights distinguish the mapped zones from surrounding urban areas and open space. A regional inset, north arrow, scale bars, source information, and coordinate-system label support interpretation of the layout.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Map highlighting urban and wildlife habitat intersections in and around Los Angeles County.",
+        "url": "/static/images/projects/los-angeles-county-crisis-zones/crisis-zones-map.png",
+        "desc": "Crisis Zones in LA County, 2026. Highlighted zones show intersections between urban development, roads, and wildlife habitat."
+      }
+    ]
+  },
+  {
+    "slug": "california-state-university-campuses",
+    "title": "California State University Campuses",
+    "summary": "Locating CSU campuses alongside California counties, airports, and highways.",
+    "desc": "This map locates California State University campuses within California. An orange border draws attention to the study area, while the surrounding cities, county boundaries, and highways provide geographic context.\n\nAirplane symbols identify nearby airports, and light gray lines distinguish highways from county boundaries. A title, legend, north arrow, scale bar, and source information complete the layout.\n\nCompleted for Professor Jeremy Huey at Pasadena City College.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Map of California State University campuses with airports, highways, and county boundaries.",
+        "url": "/static/images/projects/california-state-university-campuses/campuses-map.jpg",
+        "desc": "California State University campuses shown with nearby airports, highways, county boundaries, and a statewide locator context."
+      }
+    ]
+  },
+  {
+    "slug": "mojave-national-preserve",
+    "title": "Mojave National Preserve",
+    "summary": "Mapping points of interest, towns, and wilderness areas in the Southern California desert.",
+    "desc": "This map presents Mojave National Preserve in Southern California, highlighting its points of interest, nearby towns, and designated wilderness areas. The preserve boundary anchors the layout and provides context for its desert landscapes.\n\nRed points mark major sites, yellow symbols identify towns, and darker green areas distinguish wilderness zones from the lighter green preserve boundary. The legend, north arrow, scale bar, and source information help viewers interpret the map.\n\nCompleted for Professor Jeremy Huey at Pasadena City College.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Map of Mojave National Preserve with wilderness areas, towns, roads, and points of interest.",
+        "url": "/static/images/projects/mojave-national-preserve/preserve-map.jpg",
+        "desc": "Mojave National Preserve: points of interest, towns, roads, and designated wilderness areas, with a regional locator inset."
+      }
+    ]
+  },
+  {
+    "slug": "orange-county-population-density",
+    "title": "Orange County Population Density",
+    "summary": "Visualizing census-tract population density with 2020 U.S. Census data.",
+    "desc": "This choropleth map displays population density by census tract in Orange County, California, using 2020 U.S. Census data. Lighter shades indicate lower density, while darker shades indicate higher density.\n\nA five-class Natural Breaks (Jenks) classification groups census tracts into population-density ranges. The map highlights denser tracts around Anaheim and Santa Ana alongside less densely populated areas in eastern and southern Orange County.\n\nCity labels, the county boundary, a legend, a north arrow, scale information, and a light gray basemap support comparison across the county.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Choropleth map of population density by census tract in Orange County, California.",
+        "url": "/static/images/projects/orange-county-population-density/census-tract-density.png",
+        "desc": "Orange County population density, 2020 census tracts. Five color classes show people per square kilometer."
+      }
+    ]
+  },
+  {
+    "slug": "canada-lambert-projection",
+    "title": "Canada: Lambert Conformal Conic Projection",
+    "summary": "Exploring the NAD83 Canada Atlas Lambert coordinate system in ArcGIS Online.",
+    "desc": "This exercise explores the NAD83 Canada Atlas Lambert coordinate system and its Lambert Conformal Conic projection in ArcGIS Online. The supplied screenshot documents the basemap selection and map view used during the exercise.\n\nThe project introduces the role of coordinate systems in web mapping and spatial analysis.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "ArcGIS Online screenshot showing Canada in a Lambert Conformal Conic projection.",
+        "url": "/static/images/projects/canada-lambert-projection/canada-projection.png",
+        "desc": "ArcGIS Online workflow screenshot showing the Canada basemap used in the projection exercise."
+      }
+    ]
+  },
+  {
+    "slug": "congressional-district-comparison",
+    "title": "Congressional District Comparison",
+    "summary": "Comparing political-party classifications in 118th and 119th congressional district layers.",
+    "desc": "This introductory GIS exercise compares congressional district layers associated with the 118th and 119th Congresses. Political-party categories distinguish districts and changes between the layers.\n\nThe workflow involved finding data, creating local copies, and working with feature classes and tabular information in ArcGIS Pro. The screenshot records the comparison layer and its symbology.\n\nCompleted for Professor Jeremy Huey at Pasadena City College.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "ArcGIS Pro screenshot comparing political-party categories in congressional district layers.",
+        "url": "/static/images/projects/congressional-district-comparison/district-comparison.jpg",
+        "desc": "ArcGIS Pro workflow screenshot with political-party symbology for the 118th and 119th congressional district comparison."
+      }
+    ]
+  },
+  {
+    "slug": "california-coordinate-systems",
+    "title": "California Coordinate System Comparison",
+    "summary": "Comparing Los Angeles and San Francisco counties in UTM and State Plane coordinate systems.",
+    "desc": "This four-panel layout compares Los Angeles and San Francisco counties using projected coordinate systems. Los Angeles County is shown in UTM Zone 11N and State Plane Zone 5; San Francisco County is shown in UTM Zone 10N and State Plane Zone 3.\n\nThe exercise explores how coordinate-system choices affect the representation of geographic features. County outlines and consistent basemap context support comparison between the panels.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Four-panel map comparing Los Angeles and San Francisco counties in UTM and State Plane coordinate systems.",
+        "url": "/static/images/projects/california-coordinate-systems/coordinate-system-comparison.png",
+        "desc": "Los Angeles County: UTM Zone 11N and State Plane Zone 5. San Francisco County: UTM Zone 10N and State Plane Zone 3."
+      }
+    ]
+  },
+  {
+    "slug": "pcc-reflection-pond-digitization",
+    "title": "Pasadena City College Reflection Pond",
+    "summary": "Digitizing trees, paths, and landscape features around the campus reflection pond.",
+    "desc": "This ArcGIS Pro project digitizes landscape features around the main reflection pond at Pasadena City College. Point features identify ornamental and palm trees, line features represent a path, and polygons describe the pond and surrounding landscape areas.\n\nThe layout includes a legend, location inset, north arrow, scale bar, and coordinate-system information. It demonstrates the use of points, lines, and polygons to represent a small campus study area.\n\nCompleted for Professor Jeremy Huey at Pasadena City College.",
+    "featured": false,
+    "embed_url": null,
+    "components": [
+      {
+        "name": "Digitized map of Pasadena City College reflection pond, trees, planting areas, and a path.",
+        "url": "/static/images/projects/pcc-reflection-pond-digitization/reflection-pond-landscape.png",
+        "desc": "Pasadena City College Fountain Landscape, 2026. Digitized points, lines, and polygons describe the reflection-pond landscape."
+      }
+    ]
+  }
+]
