@@ -93,8 +93,8 @@ The project is a Python FastAPI application that renders Jinja2 templates and se
 
 This repository is configured for Vercel's Python runtime. The FastAPI application
 is exposed through `api/index.py`, and `vercel.json` routes all requests through
-that function so templates, JSON data, and static images continue to be served by
-the application.
+that function. Templates, JSON data, and static images are served by the
+application.
 
 1. Push the repository to GitHub and import it into Vercel.
 2. Set the Vercel project **Root Directory** to the repository root.
@@ -113,7 +113,8 @@ the application.
 Do not add `venv/`, `.content-review/`, caches, editor settings, or `.vercel/`
 to the deployment. These paths are ignored by Git and are not needed at runtime.
 Keep `app/`, `data/`, `static/`, `templates/`, `main.py`, `api/index.py`,
-`requirements.txt`, and `vercel.json` tracked.
+`requirements.txt`, `pyproject.toml`, `vercel.json`, and `.python-version`
+tracked.
 
 ## Data Model
 
